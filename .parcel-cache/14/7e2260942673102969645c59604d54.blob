@@ -1,0 +1,47 @@
+var _lodash = require('lodash');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _lodashDefault = _parcelHelpers.interopDefault(_lodash);
+var _shoppingCartJs = require('./shoppingCart.js');
+const nested = {
+  test: [{
+    product: 'bread',
+    quantity: 3
+  }, {
+    product: 'bananas',
+    quantity: 3
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const deepClone = _lodashDefault.default(nested);
+console.log(deepClone);
+_shoppingCartJs.addToCart('Bread', 2);
+const state = {
+  cart: [{
+    product: 'cereal',
+    quantity: 2
+  }, {
+    product: 'cookies',
+    quantity: 8
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const stateClone = Object.assign({}, state);
+const stateDeepClone = _lodashDefault.default(state);
+console.log(stateDeepClone);
+console.log('hello');
+if (module.hot) {
+  module.hot.accept();
+}
+class Person {
+  #undefined = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.#undefined}, ${this.name}`);
+  }
+}
+const henry = new Person('Henry');
+Promise;

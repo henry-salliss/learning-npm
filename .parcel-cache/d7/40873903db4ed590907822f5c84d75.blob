@@ -1,0 +1,49 @@
+var _node_modulesLodashEsCloneDeepJs = require('./node_modules/lodash-es/cloneDeep.js');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _node_modulesLodashEsCloneDeepJsDefault = _parcelHelpers.interopDefault(_node_modulesLodashEsCloneDeepJs);
+var _shoppingCartJs = require('./shoppingCart.js');
+require('core-js/stable');
+// import cloneDeep from 'lodash';
+const nested = {
+  test: [{
+    product: 'bread',
+    quantity: 3
+  }, {
+    product: 'bananas',
+    quantity: 3
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const deepClone = _node_modulesLodashEsCloneDeepJsDefault.default(nested);
+console.log(deepClone);
+_shoppingCartJs.addToCart('Bread', 2);
+const state = {
+  cart: [{
+    product: 'cereal',
+    quantity: 2
+  }, {
+    product: 'cookies',
+    quantity: 8
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const stateClone = Object.assign({}, state);
+const stateDeepClone = _node_modulesLodashEsCloneDeepJsDefault.default(state);
+console.log(stateDeepClone);
+console.log('hello');
+class Person {
+  #undefined = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.#undefined}, ${this.name}`);
+  }
+}
+const henry = new Person('Henry');
+Promise.resolve('Test').then(x => console.log(x));
+if (module.hot) {
+  module.hot.accept();
+}
