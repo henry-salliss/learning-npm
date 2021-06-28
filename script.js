@@ -1,6 +1,7 @@
 // import  from './node_modules/lodash-es/_cloneBuffer.js';
 
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 
 const nested = {
   test: [
@@ -12,3 +13,11 @@ const nested = {
 
 const deepClone = cloneDeep(nested);
 console.log(deepClone);
+
+import { totalPrice, totalQuantity, addToCart } from './shoppingCart.js';
+
+addToCart('Bread', 2);
+
+if (module.hot) {
+  module.hot.accept();
+}

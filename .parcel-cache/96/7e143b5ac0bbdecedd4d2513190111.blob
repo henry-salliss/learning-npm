@@ -1,0 +1,22 @@
+var _lodashEs = require('lodash-es');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _lodashEsDefault = _parcelHelpers.interopDefault(_lodashEs);
+var _shoppingCartJs = require('./shoppingCart.js');
+const nested = {
+  test: [{
+    product: 'bread',
+    quantity: 3
+  }, {
+    product: 'bananas',
+    quantity: 3
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const deepClone = _lodashEsDefault.default(nested);
+console.log(deepClone);
+_shoppingCartJs.addToCart('Bread', 2);
+if (module.hot) {
+  module.hot.accept();
+}
