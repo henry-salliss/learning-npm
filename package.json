@@ -16,6 +16,6 @@
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-beta.2"
+    "parcel": "^1.12.4"
   }
 }
